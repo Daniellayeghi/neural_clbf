@@ -1,4 +1,12 @@
 from argparse import ArgumentParser
+import os
+import sys
+
+current = os.path.dirname(os.path.realpath(__file__))
+parent = os.path.dirname(current)
+pparent = os.path.dirname(parent)
+
+sys.path.append(pparent)
 
 import torch
 import torch.multiprocessing

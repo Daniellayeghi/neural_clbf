@@ -1,11 +1,18 @@
 import torch
+import os
+import sys
+current = os.path.dirname(os.path.realpath(__file__))
+parent = os.path.dirname(current)
+pparent = os.path.dirname(parent)
+
+sys.path.append(pparent)
 from neural_clbf.controllers import NeuralCLBFController
 
 
 def plot_inverted_pendulum():
     # Load the checkpoint file. This should include the experiment suite used during
     # training.
-    log_file = "saved_models/review/inverted_pendulum_clf.ckpt"
+    log_file = "/home/daniel/Repos/neural_clbf/saved_models/review/inverted_pendulum_clf.ckpt"
     neural_controller = NeuralCLBFController.load_from_checkpoint(log_file)
 
     # Update parameters
